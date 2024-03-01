@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <script src="./jquery-3.3.1.js"></script>
+    <link href="./styles.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project-K</title>
+</head>
+<body>
+    <h1>Interest Calculator </h1>
+    <div class="hello">
+       <form>
+        <div class="ele">
+            <div>
+                <P>Amount:</P>
+                <input type="text" id="amount" width="50px" height="200px " required="required">
+            </div>
+            <div>
+                <P>Amount Taken Date:</P>
+                <input type="date" id="date1" required="required">
+            </div>
+            
+            <div>
+                <P>Amount Return Date:</P>
+                <input type="date" id="date2" required="required">
+            </div>
+            <div>
+                <P>Percentage of Interest:</P>
+                <input type="text" id="interest" required="required">
+            </div>
+            <div>
+                <input type="button"  value="Submit" id="btn">
+            </div>
+            <div>
+                <P>Interst Amount:</P>
+                <input type="text" id="sample" readonly="readonly" >
+            </div>
+       </form>  
+    </div>
+    <script>
+        $("#btn").click(
+            function(){
+                var amount=Number($("#amount").val());
+                var date1=new Date($("#date1").val());
+                var d1=date1.toLocaleDateString();
+                var date_1=d1.toString();
+                var date2=new Date($("#date2").val());
+                var d2=date2.toLocaleDateString();
+                var date_2=d2.toString();
+                var days = Math.round((date2- date1) / (1000 * 60 * 60 * 24)); 
+                console.log(days)
+                var interest=Number($("#interest").val());
+                var sample=(amount*days*interest)/3000;
+                $("#sample").val(sample);
+            }
+        )
+    </script>
+</body>
+</html>

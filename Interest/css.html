@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="./jquery-3.3.1.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            display: none;
+            background-color: aqua;
+        }
+      
+    </style>
+</head>
+<body>
+   <div>Welcome</div>
+   <input type="text" id="txt"> 
+   <input type="button" value="submit" id="btn">
+   <input type="text" id="txt1"> 
+
+   <script>
+    $("#btn").click(function(){
+ var s=Number($("#txt").val());
+ if(s>=28){
+    var s1="pass";
+    $("#txt1").val(s1);
+    $("#txt1").css("color","green")
+ }else{
+    var s2="fail";
+    $("#txt1").val(s2);
+    $("#txt1").css("color","red")
+ }
+});
+
+   </script>
+</body>
+</html>
